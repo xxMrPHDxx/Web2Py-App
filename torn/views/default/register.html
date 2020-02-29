@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+	{{=columns}}
+	<form name="form1" action="#" method="POST" onsubmit="register();">
+		<label>Username</label>
+		<input type="text" name="username">
+		<label>E-mail</label>
+		<input type="text" name="email">
+		<label>Password</label>
+		<input type="password" name="password">
+		<div id="gender">
+			<input name="gender" type="radio" value="0">
+			<label>Male</label>
+			<input name="gender" type="radio" value="1">
+			<label>Female</label>
+		</div>
+		<input type="submit" name="submit" value="Register">
+	</form>
+</body>
+</html>
