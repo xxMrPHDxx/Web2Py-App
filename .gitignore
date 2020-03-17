@@ -4,3 +4,5 @@ test
 welcome 
 __init__.py 
 __init__.pyc 
+errors
+sessions

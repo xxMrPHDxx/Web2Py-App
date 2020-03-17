@@ -1,0 +1,32 @@
+{{if session.user_id: redirect('index')}}{{pass}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<script type="text/javascript" src="{{=URL('static', 'js/api.js')}}"></script>
+</head>
+<body>
+	<form name="Login" method="POST" action="#">
+		<input type="text" name="usr" placeholder="Username / E-mail">
+		<input type="password" name="pwd" placeholder="Password">
+		<input type="submit" name="submit" value="Login">
+	</form>
+	<script type="text/javascript">
+		(function(n,o,p,e){
+			let a=o.Login, b=[...a.querySelectorAll('input[name]')].map(e=>e.value);
+			if(b.length != 3) throw Error('Lol!');
+			const [usr, pwd, cfm] = b;
+			a.addEventListener('submit', (e=>{
+				e.preventDefault();
+				API('login', {usr, pwd, submit: cfm})
+				.then(({success,message,login})=>{
+					if(success){
+						document.location.href = 'index';
+					}else throw message;
+				})
+				.catch(n.alert);
+			}))
+		})(window, document);
+	</script>
+</body>
+</html>

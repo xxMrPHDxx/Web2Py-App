@@ -66,3 +66,18 @@ CREATE TABLE "users"(
     "nerve" INTEGER NOT NULL
 );
 success!
+DROP TABLE "users";
+success!
+timestamp: 2020-03-18T07:04:29.732988
+CREATE TABLE "users"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) NOT NULL,
+    "email" CHAR(512) NOT NULL,
+    "password" CHAR(512) NOT NULL,
+    "gender" CHAR(1) NOT NULL,
+    "money" INTEGER NOT NULL DEFAULT 1000,
+    "points" INTEGER NOT NULL DEFAULT 0,
+    "health" INTEGER NOT NULL DEFAULT 100,
+    "nerve" INTEGER NOT NULL DEFAULT 15
+);
+success!
